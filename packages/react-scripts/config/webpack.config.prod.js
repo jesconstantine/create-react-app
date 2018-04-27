@@ -151,7 +151,7 @@ module.exports = {
             loader: require.resolve('eslint-loader'),
           },
         ],
-        include: [paths.appSrc, fs.realpathSync(paths.appSrc+'/solr-faceted-search-react')],
+        include: paths.appSrc,
       },
       {
         // "oneOf" will traverse all following loaders until one will
@@ -171,7 +171,7 @@ module.exports = {
           // Process JS with Babel.
           {
             test: /\.(js|jsx|mjs)$/,
-            include: paths.appSrc,
+            include: [paths.appSrc, fs.realpathSync(paths.appSrc+'/solr-faceted-search-react')],
             loader: require.resolve('babel-loader'),
             options: {
               // @remove-on-eject-begin
