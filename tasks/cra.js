@@ -1,9 +1,9 @@
 #!/usr/bin/env node
 /**
- * Copyright (c) 2015-present, Facebook, Inc. 
- * 
- * This source code is licensed under the MIT license found in the 
- * LICENSE file in the root directory of this source tree. 
+ * Copyright (c) 2015-present, Facebook, Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
  */
 
 'use strict';
@@ -113,7 +113,7 @@ const args = process.argv.slice(2);
 // Now run the CRA command
 const craScriptPath = path.join(packagesDir, 'create-react-app', 'index.js');
 cp.execSync(
-  `node ${craScriptPath} --scripts-version="${scriptsPath}" ${args.join(' ')}`,
+  `node ${craScriptPath} ${args.join(' ')} --scripts-version="${scriptsPath}"`,
   {
     cwd: rootDir,
     stdio: 'inherit',
